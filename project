@@ -1,0 +1,84 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Project name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief project description"
+    },
+    "language": {
+      "type": "string",
+      "description": "Programming language or framework"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "expert"
+      ],
+      "default": "intermediate"
+    },
+    "code": {
+      "type": "string",
+      "description": "The generated app code (HTML/CSS/JS bundle)"
+    },
+    "prompt_history": {
+      "type": "array",
+      "description": "History of AI prompts used",
+      "items": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "building",
+        "ready",
+        "published"
+      ],
+      "default": "draft"
+    },
+    "custom_domain": {
+      "type": "string",
+      "description": "Custom domain name e.g. myapp.cool"
+    },
+    "custom_subdomain": {
+      "type": "string",
+      "description": "The word before the dot"
+    },
+    "custom_tld": {
+      "type": "string",
+      "description": "The word after the dot"
+    },
+    "published_url": {
+      "type": "string",
+      "description": "The live published URL"
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "description": "Preview thumbnail"
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Anonymous session identifier"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
